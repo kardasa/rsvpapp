@@ -17,7 +17,7 @@ services:
     - "5000:5000"
    environment:
     MONGODB_HOST: mongodb
-     LINK: http://www.kardasa.pl
+    LINK: http://www.kardasa.pl
     TEXT1: OpenAdmin.pl 
     TEXT2: Testowa Aplikacja!
     LOGO: http://www.kardasa.pl/uploads/images/CV/KardasA_Small.jpg

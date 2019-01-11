@@ -1,11 +1,11 @@
 stage  ('test') {
     node ('docker-jenkins-slave'){
-        git "${GITHUBREPO}"
+        checkout scm
         sh 'chmod a+x ./run_test.sh'
         sh './run_test.sh'
     }
     node(){
-       git "${GITHUBREPO}"
+       checkout scm
        stage('build the image'){
            withDockerServer([credentialsId: 'staging-server',uri:"${DOCKERHOST}"]){
                docker.build "${DOCKERUSER}/rsvpapp:mooc"
